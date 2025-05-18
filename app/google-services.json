@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "651352446027",
+    "project_id": "rma-2-ajnur-nukic",
+    "storage_bucket": "rma-2-ajnur-nukic.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:651352446027:android:ca9c7c209446ff8cdee9ce",
+        "android_client_info": {
+          "package_name": "com.example.rma_2_ajnur_nukic"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAvvNnPv4d6hruB3iQaGnshOVaS5M-sTZo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

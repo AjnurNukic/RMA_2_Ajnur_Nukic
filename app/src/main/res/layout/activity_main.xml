@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:gravity="top"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:weightSum="10"
+    android:paddingLeft="16dp"
+    android:paddingRight="16dp"
+    android:paddingBottom="16dp"
+    android:paddingTop="0dp">
+
+    <!-- Gornji red: Dobro došli + Settings -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="2dp">
+
+        <TextView
+            android:id="@+id/tv_welcome"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:text="Dobro došli"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:textColor="?attr/colorOnBackground"/>
+
+        <!-- Settings dugme: bijela podloga, crna ikona -->
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/btn_settings"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:padding="12dp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:backgroundTint="@android:color/white"
+            android:src="@drawable/ic_settings"
+            android:tint="?attr/colorOnBackground"
+            android:contentDescription="@string/settings"/>
+    </LinearLayout>
+
+    <!-- 45% visine za Wordle kockice -->
+    <LinearLayout
+        android:id="@+id/gridContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4.6"
+        android:gravity="center_horizontal">
+
+        <!-- red 0 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView style="@style/Cell" android:id="@+id/cell_0_0"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_0_1"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_0_2"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_0_3"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_0_4"/>
+        </LinearLayout>
+        <!-- red 1 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView style="@style/Cell" android:id="@+id/cell_1_0"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_1_1"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_1_2"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_1_3"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_1_4"/>
+        </LinearLayout>
+        <!-- red 2 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView style="@style/Cell" android:id="@+id/cell_2_0"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_2_1"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_2_2"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_2_3"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_2_4"/>
+        </LinearLayout>
+        <!-- red 3 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView style="@style/Cell" android:id="@+id/cell_3_0"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_3_1"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_3_2"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_3_3"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_3_4"/>
+        </LinearLayout>
+        <!-- red 4 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView style="@style/Cell" android:id="@+id/cell_4_0"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_4_1"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_4_2"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_4_3"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_4_4"/>
+        </LinearLayout>
+        <!-- red 5 -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TextView style="@style/Cell" android:id="@+id/cell_5_0"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_5_1"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_5_2"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_5_3"/>
+            <TextView style="@style/Cell" android:id="@+id/cell_5_4"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <!-- 55% visine za tastaturu -->
+    <LinearLayout
+        android:id="@+id/keyboardContainer"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5.4"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="4dp">
+
+        <!-- red 1: A B C Č Ć -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/btn_a"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="A"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_b"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="B"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_c"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="C"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_c_caron"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Č"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_c_acute"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Ć"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- red 2: D Dž Đ E F -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btn_d"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="D"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_dz"
+                style="@style/Key"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_weight="1"
+                android:padding="4dp"
+                android:text="D&#x017E;"
+                android:textAllCaps="false"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_dj"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Đ"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_e"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="E"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_f"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="F"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- red 3: G H I J K -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btn_g"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="G"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_h"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="H"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_i"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="I"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_j"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="J"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_k"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="K"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- red 4: L Lj M N Nj -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btn_l"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="L"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_lj"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Lj"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_m"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="M"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_n"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="N"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_nj"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Nj"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- red 5: O P R S Š -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btn_o"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="O"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_p"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="P"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_r"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="R"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_s"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="S"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_s_caron"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Š"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- red 6: T U V Z Ž -->
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp">
+
+            <Button
+                android:id="@+id/btn_t"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="T"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_u"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="U"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_v"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="V"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_z"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Z"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_z_caron"
+                style="@style/Key"
+                android:layout_weight="1"
+                android:text="Ž"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <!-- akcioni red: DEL & ENTER -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_del"
+                style="@style/Key"
+                android:layout_weight="2"
+                android:text="DEL"
+                android:textColor="@color/black" />
+
+            <Button
+                android:id="@+id/btn_enter"
+                style="@style/Key"
+                android:layout_weight="3"
+                android:text="ENTER"
+                android:textColor="@color/black" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
