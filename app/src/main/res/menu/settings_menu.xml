@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_logout"
+        android:title="Logout"
+        android:icon="@android:drawable/ic_lock_power_off" />
+
+    <item
+        android:id="@+id/action_change_password"
+        android:title="Promijeni šifru"
+        android:icon="@android:drawable/ic_menu_edit" />
+
+    <item
+        android:id="@+id/action_toggle_dark_mode"
+        android:title="Dark/Light Mode"
+        android:icon="@android:drawable/ic_menu_day" />
+
+    <!-- Nova stavka -->
+    <item
+        android:id="@+id/action_hint"
+        android:title="Hint"
+        android:icon="@android:drawable/ic_menu_info_details" />
+    <item
+        android:id="@+id/action_restart"
+        android:title="Restartuj igru"
+        app:showAsAction="never" />
+
+</menu>

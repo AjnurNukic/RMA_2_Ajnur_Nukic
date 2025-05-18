@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <style name="Theme.WordleApp" parent="Theme.Material3.DayNight.NoActionBar">
+
+        <item name="colorSecondary">#7B61FF</item>
+        <item name="colorOnSecondary">@color/white</item>
+    </style>
+
+    <style name="Theme.WordleApp.NoActionBar" parent="Theme.WordleApp">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+
+</resources>
