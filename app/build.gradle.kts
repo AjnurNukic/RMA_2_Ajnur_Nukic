@@ -39,7 +39,6 @@ dependencies {
     implementation(libs.activity)
     implementation(libs.constraintlayout)
     implementation("androidx.gridlayout:gridlayout:1.0.0")
-
     implementation ("com.google.android.material:material:1.12.0")
 
     androidTestImplementation ("androidx.test.ext:junit:1.1.5")
@@ -50,6 +49,8 @@ dependencies {
     implementation("com.google.firebase:firebase-analytics")
     implementation("com.google.firebase:firebase-firestore")
     implementation("com.google.firebase:firebase-auth")
+    implementation ("androidx.cardview:cardview:1.0.0")
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)

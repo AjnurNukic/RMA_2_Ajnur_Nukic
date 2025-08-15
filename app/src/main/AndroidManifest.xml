@@ -52,6 +52,7 @@
             android:name=".ChangePasswordActivity"
             android:exported="false"
             android:theme="@style/Theme.WordleApp.NoActionBar" />
+        <activity android:name=".StatsActivity" />
 
 
     </application>

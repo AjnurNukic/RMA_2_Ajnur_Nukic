@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <item
         android:id="@+id/action_logout"
         android:title="Logout"
-        android:icon="@android:drawable/ic_lock_power_off" />
+        android:src="@drawable/logout"
+        />
 
     <item
         android:id="@+id/action_change_password"
@@ -14,16 +16,22 @@
     <item
         android:id="@+id/action_toggle_dark_mode"
         android:title="Dark/Light Mode"
-        android:icon="@android:drawable/ic_menu_day" />
+        android:icon="@android:drawable/ic_menu_manage" />
 
-    <!-- Nova stavka -->
     <item
         android:id="@+id/action_hint"
         android:title="Hint"
         android:icon="@android:drawable/ic_menu_info_details" />
+
     <item
         android:id="@+id/action_restart"
         android:title="Restartuj igru"
+        android:icon="@android:drawable/ic_menu_rotate"
         app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_stats"
+        android:title="Statistika"
+        android:icon="@android:drawable/ic_menu_agenda" />
 
 </menu>

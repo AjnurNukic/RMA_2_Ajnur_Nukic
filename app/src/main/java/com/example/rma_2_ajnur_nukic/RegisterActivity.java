@@ -63,8 +63,14 @@ public class RegisterActivity extends AppCompatActivity {
                             if (task.isSuccessful()) {
                                 // Sastavimo mapu s podacima
                                 Map<String,Object> userData = new HashMap<>();
+                                // Sastavimo mapu s podacima + početna statistika
                                 userData.put("name", name);
                                 userData.put("email", email);
+                                userData.put("games", 0);
+                                userData.put("wins", 0);
+                                userData.put("streak", 0);
+                                userData.put("maxStreak", 0);
+
                                 // po potrebi možeš dodati i lozinku ili neki drugi podatak:
                                 // userData.put("password", password);
 
